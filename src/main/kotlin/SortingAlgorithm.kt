@@ -2,21 +2,6 @@ object SortingAlgorithm {
 
     lateinit var array: IntArray
 
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val list = intArrayOf(3, -1)
-//
-//        this.array = list
-//        quickSort(0, array.lastIndex)
-//        val sortedList = quickSort(list, 0)
-
-        array = list
-        val sorted = sortArray(list)
-        sorted.forEach { i ->
-            print("$i ")
-        }
-    }
-
     fun sortArray(nums: IntArray): IntArray {
         array = nums
         quickSort(0, nums.lastIndex)
@@ -34,6 +19,7 @@ object SortingAlgorithm {
             return
         }
 
+        // base case
         if (size == 2) {
             if (array[leftIndex] > array[rightIndex]) {
                 swap(leftIndex, rightIndex)
